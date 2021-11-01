@@ -1,7 +1,6 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
-
 get '/' do
     "Hello world!"
 end
@@ -19,6 +18,15 @@ get '/another test' do
 end
 
 
-get '/cat' do
-  erb(:index)
+get '/random_cat' do
+  @random_name = ["Amigo", "Misty", "Almond"].sample
+  erb :index
 end
+
+
+get '/named-cat' do
+    p params
+    @name = params[:name]
+    erb :index
+  end
+
