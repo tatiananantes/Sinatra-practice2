@@ -17,3 +17,9 @@ end
 get '/another test' do
     "another test"
 end
+
+get '/cat' do
+  "<div>
+    <img src='http://placekitten.com/500/500'>
+   </div>"
+end
